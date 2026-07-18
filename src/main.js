@@ -3,6 +3,9 @@ import './style.css';
 const form = document.querySelector('#request-form');
 
 // TODO 1: query preview/status/list elements
+const preview = {
+    
+}
 // TODO 2: readForm()
 // TODO 3: renderPreview(data)
 // TODO 4: validate(data)
