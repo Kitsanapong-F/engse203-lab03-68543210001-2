@@ -53,14 +53,25 @@ Plaintext
 
 ## ภาพหน้าจอ (Screenshots)
 
-### Normal State
+### หน้าจอปกติ ไม่มี error
 
-<img src="image/image1.png">
+<img src="engse203-lab03-68543210001-2/image/image3.png">
 
-### Error State
+### มุมมอง(375px)
 
-<img src="image/image2.png">
+<img src="engse203-lab03-68543210001-2/image/image.png">
 
+### Live Preview
+
+<img src="engse203-lab03-68543210001-2/image/image2.png">
+
+### Success
+
+<img src="engse203-lab03-68543210001-2/image/image.png">
+
+### Validation Error
+
+<img src="engse203-lab03-68543210001-2/image/image1.png">
 ---
 
 ## ปัญหาที่พบและวิธีแก้ไข
