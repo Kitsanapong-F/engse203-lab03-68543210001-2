@@ -49,7 +49,31 @@ Plaintext
 - **Event & Live Preview:** ระบบแสดงผลลัพธ์การพิมพ์แบบทันที (Live Preview) รวมถึงมีฟังก์ชัน Live Counter นับจำนวนตัวอักษรในกล่อง Details แบบเรียลไทม์ และระบบเมื่อกด Submit จะส่งข้อมูลลงรายการด้านล่างพร้อมเคลียร์ฟอร์มโดยไม่รีเฟรชหน้าเว็บด้วย `preventDefault()`
 - **Responsive Layout:** หน้าเว็บสามารถปรับสัดส่วนการแสดงผลจาก 2 คอลัมน์บน Desktop ลงมาเหลือ 1 คอลัมน์บน Mobile (375px) ได้อย่างสมบูรณ์ และรองรับการขยายหน้าจอแบบ Zoom 200% ได้โดยไม่เกิดแถบเลื่อนแนวนอน (Horizontal Scroll)
 
-*(คำแนะนำ: แปะภาพหน้าจอผลลัพธ์เวอร์ชัน Desktop, Mobile (375px) และตอนแจ้งเตือน Error ตรงส่วนนี้เพิ่มเติมครับ)*
+---
+GitHub Pages URL
+🔗deploy แล้ว: https://kitsanapong-f.github.io/engse203-lab03-68543210001-2/
+## ภาพหน้าจอ (Screenshots)
+
+### หน้าจอปกติ ไม่มี error
+
+<img src="./image/image3.png" alt="หน้าจอปกติ">
+
+### มุมมอง(375px)
+
+<img src="./image/image.png" alt="มุมมอง 375px">
+
+### Live Preview
+
+<img src="./image/image1.png" alt="Live Preview">
+
+### Success
+
+<img src="./image/image.png" alt="Success">
+
+### Validation Error
+
+<img src="./image/image1.png" alt="Validation Error">
+---
 
 ## ปัญหาที่พบและวิธีแก้ไข
 
@@ -61,5 +85,16 @@ Plaintext
 
 ## References & AI Assistance
 
+AI Tools Utilized
 
-My adaptation: นำคำแนะนำมาประยุกต์เขียน CSS และสลับพอร์ตการเชื่อมต่อ Git บนสภาพแวดล้อม WSL ของตัวเอง รวมถึงพัฒนาฟังก์ชัน JavaScript อัปเดตตัวนับจำนวนตัวอักษร (Live Counter) แบบสด ๆ ร่วมกับโครงสร้างแล็บเดิมอย่างปลอดภัย
+Tools: Claude, Gemini, ChatGPT
+
+Purpose: ศึกษาแนวทางการจัดการ DOM Events (input และ submit) และกระบวนการตรวจสอบข้อมูล (Form Validation) รวมถึงการประยุกต์ใช้ HTML attributes เช่น id, name และ aria-describedby เพื่อควบคุมออบเจ็กต์ผ่าน querySelector
+
+My Adaptations & Contributions
+
+Logic Implementation: ทำความเข้าใจและเขียนโครงสร้าง main.js และ index.html ด้วยตนเอง โดยเน้นลำดับการทำงานของฟังก์ชัน การส่งค่าระหว่างฟังก์ชัน และการเข้าถึง DOM Elements
+
+Responsive CSS (Mobile-First): ออกแบบเลย์เอาต์ด้วยตนเองทั้งหมด โดยใช้ @media query ปรับโครงสร้างคลาส .page-grid ให้แสดงผลเป็น 2 คอลัมน์บนหน้าจอขนาด Desktop
+
+AI Assistance: ใช้ AI เป็นที่ปรึกษาในการปรับปรุงดีไซน์และการจัดสัดส่วนหน้าเว็บ (UI/UX) ให้มีความสวยงามยิ่งขึ้น ในขณะที่กลไกการเขียนโค้ดและโครงสร้างเลย์เอาต์หลักทั้งหมด เป็นการพัฒนาและปรับแต่งด้วยตนเอง
