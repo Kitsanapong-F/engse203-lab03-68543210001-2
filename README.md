@@ -50,28 +50,29 @@ Plaintext
 - **Responsive Layout:** หน้าเว็บสามารถปรับสัดส่วนการแสดงผลจาก 2 คอลัมน์บน Desktop ลงมาเหลือ 1 คอลัมน์บน Mobile (375px) ได้อย่างสมบูรณ์ และรองรับการขยายหน้าจอแบบ Zoom 200% ได้โดยไม่เกิดแถบเลื่อนแนวนอน (Horizontal Scroll)
 
 ---
-
+GitHub Pages URL
+🔗deploy แล้ว: https://kitsanapong-f.github.io/engse203-lab03-68543210001-2/
 ## ภาพหน้าจอ (Screenshots)
 
 ### หน้าจอปกติ ไม่มี error
 
-<img src="engse203-lab03-68543210001-2/image/image3.png">
+<img src="./image/image3.png" alt="หน้าจอปกติ">
 
 ### มุมมอง(375px)
 
-<img src="engse203-lab03-68543210001-2/image/image.png">
+<img src="./image/image.png" alt="มุมมอง 375px">
 
 ### Live Preview
 
-<img src="engse203-lab03-68543210001-2/image/image1.png">
+<img src="./image/image1.png" alt="Live Preview">
 
 ### Success
 
-<img src="/home/kitsanapong/workspace/engse203/engse203-lab03-68543210001-2/image/image.png">
+<img src="./image/image.png" alt="Success">
 
 ### Validation Error
 
-<img src="/home/kitsanapong/workspace/engse203/engse203-lab03-68543210001-2/image/image1.png">
+<img src="./image/image1.png" alt="Validation Error">
 ---
 
 ## ปัญหาที่พบและวิธีแก้ไข
