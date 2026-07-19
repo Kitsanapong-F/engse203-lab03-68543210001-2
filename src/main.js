@@ -1,7 +1,11 @@
 import './style.css';
+
 const form = document.querySelector('#request-form');
 const detailsCounter = document.querySelector('#details-count');
-
+const statTotalEl = document.querySelector('#stat-total');
+const statPendingEl = document.querySelector('#stat-pending');
+const statApprovedEl = document.querySelector('#stat-approved');
+const requestList = document.querySelector('#request-list');
 // TODO 1: query preview/status/list elements
 const preview = {
     name: document.querySelector('#preview-name'),
@@ -9,36 +13,41 @@ const preview = {
     type: document.querySelector('#preview-type'),
     list: document.querySelector('#request-list'),
     details: document.querySelector('#preview-details'),
-}
+};
+
 
 // TODO 2: readForm()
 function readForm() {
     return Object.fromEntries(new FormData(form).entries());
 }
 
+
 // TODO 3: renderPreview(data)
 function renderPreview(data) {
     preview.name.textContent = data.requester_name?.trim() || 'ยังไม่ระบุชื่อ';
-    preview.type.textContent = data.select?.trim() || 'ยังไม่เลือกประเภท'
-    preview.details.textContent = data.details?.trim() || 'ยังไม่มีรายละเอียด'
+    preview.type.textContent = data.select?.trim() || 'ยังไม่เลือกประเภท';
+    preview.details.textContent = data.details?.trim() || 'ยังไม่มีรายละเอียด';
 }
+
+
 // TODO 4: validate(data)
 function validate(data) {
     const errors = {};
 
     if (!data.requester_name || data.requester_name.trim().length < 2) {
-        errors.requester_name = 'กรุณากรอกชื่อผู้แจ้ง';
+        errors.requester_name = 'กรุณากรอกชื่ออย่างน้อย 2 ตัวอักษร';
     }
 
     if (!data.select || data.select.trim() === '') {
-        errors.select = 'กรุณาเลือกประเภท';
+        errors.select = 'กรุณาเลือกประเภทคำขอ';
     }
 
     if (!data.details || data.details.trim().length < 10) {
-        errors.details = 'กรุณาเขียนอย่างน้อย 10 ตัวอักษร';
+        errors.details = 'กรุณาอธิบายรายละเอียดอย่างน้อย 10 ตัวอักษร';
     }
     return errors;
 }
+
 // TODO 5: renderErrors(errors)
 function renderErrors(errors) {
     const fieldNames = ['requester_name', 'select', 'details'];
@@ -51,7 +60,6 @@ function renderErrors(errors) {
             const message = errors[name] ?? '';
             output.textContent = message;
 
-            // ป้องกันไว้ก่อน: เผื่อสะกดชื่อฟิลด์ไม่ตรงกับ HTML โค้ดจะได้ไม่พังกลางทาง
             if (field) {
                 field.setAttribute('aria-invalid', String(Boolean(message)));
             }
@@ -59,20 +67,20 @@ function renderErrors(errors) {
     }
 
     const hasErrors = Object.keys(errors).length > 0;
-
     if (hasErrors) {
-        renderStatus('invalid', 'กรุณากรอกข้อมูลให้ถูกต้องและครบถ้วน');
-    } else {
-        renderStatus('idle', 'เริ่มพิมพ์เพื่อทดลอง Event และ Live Preview');
+        renderStatus('invalid', 'กรุณาตรวจสอบข้อมูลที่ระบุให้ถูกต้อง');
     }
 }
-// TODO 6: input and submit listeners
 
+
+
+// TODO 6: input and submit listeners
 form.addEventListener('input', () => {
     const data = readForm();
     renderPreview(data);
     if (detailsCounter) {
-        const currentLength = data.details?.trim().length || 0;
+
+        const currentLength = data.details?.length || 0;
         detailsCounter.textContent = `${currentLength} ตัวอักษร`;
     }
 });
@@ -88,35 +96,43 @@ form.addEventListener('submit', (event) => {
 
 
     if (Object.keys(errors).length === 0) {
+        renderStatus('success', 'บันทึกข้อมูลคำขอสำเร็จเรียบร้อย!');
 
-        renderStatus('success', 'ส่งคำร้องขอสำเร็จ!');
 
         const newLi = document.createElement('li');
-        newLi.textContent = `คำร้องจาก: ${data.requester_name}`;
-        preview.list.appendChild(newLi);
+        const titleEl = document.createElement('strong');
+        const detailsEl = document.createElement('span');
 
-        form.reset();
-        renderPreview({ requester_name: '', select: '', details: '' });
+        titleEl.textContent = `${data.requester_name.trim()} [${data.select}]`;
+        detailsEl.textContent = data.details.trim();
+
+        newLi.appendChild(titleEl);
+        newLi.appendChild(detailsEl);
+
+        preview.list.prepend(newLi);
 
         if (detailsCounter) {
             detailsCounter.textContent = '0 ตัวอักษร';
         }
+
+        if (statTotalEl && statPendingEl && statApprovedEl) {
+            let currentTotal = parseInt(statTotalEl.textContent) || 0;
+            let currentPending = parseInt(statPendingEl.textContent) || 0;
+            let currentApproved = parseInt(statApprovedEl.textContent) || 0;
+            statTotalEl.textContent = currentTotal + 1;
+            statPendingEl.textContent = currentPending + 1;
+            statApprovedEl.textContent = currentApproved + 1;
+        }
+
+    
     }
 });
 
-form.addEventListener('reset', () => {
-  queueMicrotask(() => {
-    renderErrors({});
-    renderPreview(readForm());
-    renderStatus('idle', 'พร้อมเริ่มกรอกข้อมูลใหม่');
-  });
-});
 function renderStatus(type, message) {
     preview.status.textContent = message;
     preview.status.setAttribute('data-state', type);
 }
 
+
 renderPreview(readForm());
 renderStatus('idle', 'เริ่มพิมพ์เพื่อทดลอง Event และ Live Preview');
-
-console.log('LAB 3 starter ready', form);

@@ -4,52 +4,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ENGSE203 LAB 3</title>
+  <title>ENGSE203 LAB 3 — Campus Service Request</title>
   <link rel="stylesheet" href="./src/style.css">
   <script type="module" src="./src/main.js"></script>
 </head>
 
 <body>
+
   <header class="hero">
     <div class="container">
-      <p class="eyebrow">ENGSE203 • LAB 3</p>
       <h1>Campus Service Request</h1>
-      <p>Responsive Web UI, Event and Form</p>
+      <p>LAB 3 . Responsive Web UI + Event + Form</p>
     </div>
   </header>
 
+  <section class="container stats-container" aria-label="Request Summary Statistics">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Total Requests</span>
+        <strong id="stat-total" class="stat-number">0</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Pending</span>
+        <strong id="stat-pending" class="stat-number">0</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Approved</span>
+        <strong id="stat-approved" class="stat-number">0</strong>
+      </div>
+    </div>
+  </section>
+
   <main class="container page-grid">
+
+
     <section class="panel" aria-labelledby="form-title">
       <h2 id="form-title">Create Service Request</h2>
       <form id="request-form" novalidate>
 
-        <!-- TODO 1: Requester Name field -->
-        <div class="field ">
+
+        <div class="field">
           <label for="requester-name">Requester Name</label>
           <input type="text" id="requester-name" name="requester_name" placeholder="Enter your full name"
-            aria-describedby="requester_name-error" required>
-          </input>
+            aria-describedby="requester_name-error" required />
           <p id="requester_name-error" class="error" aria-live="polite"></p>
         </div>
 
-        <!-- TODO 2: Request Type select -->
         <div class="field">
           <label for="select">Request Type</label>
           <select name="select" id="select" aria-describedby="select-error" required>
             <option value="" disabled selected>-- Please select a request type --</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="Hardware">Hardware / Equipment</option>
+            <option value="Software">Software / OS Installation</option>
+            <option value="Network">Network / Wi-Fi Troubleshooting</option>
+            <option value="General">General Infrastructure Service</option>
           </select>
           <p id="select-error" class="error" aria-live="polite"></p>
         </div>
 
-        <!-- TODO 3: Details textarea -->
+
         <div class="field">
           <label for="details">Details</label>
-          <textarea name="details" id="details" placeholder="Enter request details" aria-describedby="details-error"
-            required></textarea>
+          <textarea name="details" id="details" placeholder="Enter request details"
+            aria-describedby="details-hint details-error" required></textarea>
           <div class="field-meta">
             <small id="details-hint" class="hint">อย่างน้อย 10 ตัวอักษร</small>
             <small id="details-count" class="counter" aria-live="polite">0 ตัวอักษร</small>
@@ -57,14 +74,20 @@
           <p id="details-error" class="error" aria-live="polite"></p>
         </div>
 
-        <button type="submit">Submit Request</button>
-        <button type="reset" class="button-secondary">เริ่มใหม่</button>
+
+        <div class="actions">
+          <button type="submit">Submit Request</button>
+        </div>
+
+
         <p id="form-status" class="status" role="status"></p>
       </form>
     </section>
 
+
     <aside class="panel preview-panel" aria-labelledby="preview-title">
       <h2 id="preview-title">Live Preview</h2>
+
       <dl id="preview" aria-live="polite">
         <div>
           <dt>Name</dt>
@@ -79,8 +102,12 @@
           <dd id="preview-details">ยังไม่มีรายละเอียด</dd>
         </div>
       </dl>
-      <h3>Submitted Requests</h3>
-      <ol id="request-list" class="request-list"></ol>
+
+      <hr class="divider" />
+      <div class="request-box">
+        <h3>Submitted Requests</h3>
+        <ol id="request-list" class="request-list"></ol>
+      </div>
     </aside>
   </main>
 </body>
