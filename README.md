@@ -63,7 +63,7 @@ Plaintext
 
 ### Live Preview
 
-<img src="engse203-lab03-68543210001-2/image/image2.png">
+<img src="engse203-lab03-68543210001-2/image/image1.png">
 
 ### Success
 
