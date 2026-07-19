@@ -1,5 +1,4 @@
 import './style.css';
-
 const form = document.querySelector('#request-form');
 const detailsCounter = document.querySelector('#details-count');
 const statTotalEl = document.querySelector('#stat-total');
@@ -124,7 +123,7 @@ form.addEventListener('submit', (event) => {
             statApprovedEl.textContent = currentApproved + 1;
         }
 
-    
+
     }
 });
 
@@ -136,3 +135,4 @@ function renderStatus(type, message) {
 
 renderPreview(readForm());
 renderStatus('idle', 'เริ่มพิมพ์เพื่อทดลอง Event และ Live Preview');
+console.log('LAB 3 starter ready', form);
