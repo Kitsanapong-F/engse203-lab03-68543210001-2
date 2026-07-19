@@ -2,9 +2,10 @@
 
 ## ผู้จัดทำ
 
-- ชื่อ-นามสกุล: <ใส่ชื่อ-นามสกุลของคุณที่นี่>
-- รหัสนักศึกษา: <ใส่รหัสนักศึกษาของคุณที่นี่>
-- ระบบปฏิบัติการที่ใช้: Windows (WSL - Ubuntu)
+-Student ID: <68543210001-2>
+-Name: <นาย กฤษณพงศ์ ชัยสุ>
+-Operating system: <WSL+Windows>
+-GitHub Pages URL: <https://github.com/Kitsanapong-F/engse203-lab03-68543210001-2>
 
 ## วัตถุประสงค์ของงาน
 
