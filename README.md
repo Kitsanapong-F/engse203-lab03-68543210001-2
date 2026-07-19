@@ -67,11 +67,11 @@ Plaintext
 
 ### Success
 
-<img src="engse203-lab03-68543210001-2/image/image.png">
+<img src="/home/kitsanapong/workspace/engse203/engse203-lab03-68543210001-2/image/image.png">
 
 ### Validation Error
 
-<img src="engse203-lab03-68543210001-2/image/image1.png">
+<img src="/home/kitsanapong/workspace/engse203/engse203-lab03-68543210001-2/image/image1.png">
 ---
 
 ## ปัญหาที่พบและวิธีแก้ไข
