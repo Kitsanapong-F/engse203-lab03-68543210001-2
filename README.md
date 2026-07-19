@@ -2,10 +2,10 @@
 
 ## ผู้จัดทำ
 
--Student ID: <68543210001-2>
--Name: <นาย กฤษณพงศ์ ชัยสุ>
--Operating system: <WSL+Windows>
--GitHub Pages URL: <https://github.com/Kitsanapong-F/engse203-lab03-68543210001-2>
+- Student ID: <68543210001-2>
+- Name: <นาย กฤษณพงศ์ ชัยสุ>
+- Operating system: <WSL+Windows>
+- GitHub Pages URL: <https://github.com/Kitsanapong-F/engse203-lab03-68543210001-2>
 
 ## วัตถุประสงค์ของงาน
 
