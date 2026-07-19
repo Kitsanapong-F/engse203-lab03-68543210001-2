@@ -57,8 +57,8 @@ function renderErrors(errors) {
 
 form.addEventListener('input', () => {
   // TODO 9: Read → Render
-    const data = readForm();
-    renderPreview(data);
+  const data = readForm();
+  renderPreview(data);
 });
 
 form.addEventListener('submit', (event) => {
@@ -83,14 +83,5 @@ function renderStatus(state, message) {
 }
 
 
-form.addEventListener('reset', () => {
-  queueMicrotask(() => {
-    // TODO 11: reset preview, errors และ status
-    renderErrors({});
-    renderPreview(readForm());
-    renderStatus('idle', 'พร้อมเริ่มกรอกข้อมูลใหม่');
-
-  });
-});
 renderPreview(readForm());
 renderStatus('idle', 'เริ่มพิมพ์เพื่อทดลอง Event และ Live Preview');
