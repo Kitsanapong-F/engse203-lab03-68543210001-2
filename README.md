@@ -85,5 +85,16 @@ GitHub Pages URL
 
 ## References & AI Assistance
 
+AI Tools Utilized
 
-My adaptation: นำคำแนะนำมาประยุกต์เขียน CSS และสลับพอร์ตการเชื่อมต่อ Git บนสภาพแวดล้อม WSL ของตัวเอง รวมถึงพัฒนาฟังก์ชัน JavaScript อัปเดตตัวนับจำนวนตัวอักษร (Live Counter) แบบสด ๆ ร่วมกับโครงสร้างแล็บเดิมอย่างปลอดภัย
+Tools: Claude, Gemini, ChatGPT
+
+Purpose: ศึกษาแนวทางการจัดการ DOM Events (input และ submit) และกระบวนการตรวจสอบข้อมูล (Form Validation) รวมถึงการประยุกต์ใช้ HTML attributes เช่น id, name และ aria-describedby เพื่อควบคุมออบเจ็กต์ผ่าน querySelector
+
+My Adaptations & Contributions
+
+Logic Implementation: ทำความเข้าใจและเขียนโครงสร้าง main.js และ index.html ด้วยตนเอง โดยเน้นลำดับการทำงานของฟังก์ชัน การส่งค่าระหว่างฟังก์ชัน และการเข้าถึง DOM Elements
+
+Responsive CSS (Mobile-First): ออกแบบเลย์เอาต์ด้วยตนเองทั้งหมด โดยใช้ @media query ปรับโครงสร้างคลาส .page-grid ให้แสดงผลเป็น 2 คอลัมน์บนหน้าจอขนาด Desktop
+
+AI Assistance: ใช้ AI เป็นที่ปรึกษาในการปรับปรุงดีไซน์และการจัดสัดส่วนหน้าเว็บ (UI/UX) ให้มีความสวยงามยิ่งขึ้น ในขณะที่กลไกการเขียนโค้ดและโครงสร้างเลย์เอาต์หลักทั้งหมด เป็นการพัฒนาและปรับแต่งด้วยตนเอง
