@@ -164,9 +164,15 @@ textarea[aria-invalid="true"] {
 }
 
 .error {
+    font-size: 90%;
     min-height: 1.2rem;
     color: var(--danger);
-    font-weight: 650;
+    font-weight: 54;
+}
+
+.error:empty {
+    min-height: 0;
+    display: none;
 }
 
 .field-meta {
@@ -299,6 +305,12 @@ footer {
     padding: 1.2rem 0 2rem;
     color: var(--muted);
     text-align: center;
+}
+
+#preview dd {
+    overflow-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
 }
 
 @media (min-width: 48rem) {
