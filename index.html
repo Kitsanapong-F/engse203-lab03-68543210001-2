@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ENGSE203 LAB 3</title>
   <link rel="stylesheet" href="src/style.css">
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="src/main.js"></script>
 </head>
 
 <body>
@@ -24,29 +24,41 @@
       <form id="request-form" novalidate>
 
         <!-- TODO 1: Requester Name field -->
-        <div class="field">
+        <div class="field ">
           <label for="requester-name">Requester Name</label>
-          <input type="text" id="requester-name" name="requester_name" placeholder="Enter your full name" required>
+          <input type="text" id="requester-name" name="requester_name" placeholder="Enter your full name"
+            aria-describedby="requester_name-error" required>
+          </input>
+          <p id="requester_name-error" class="error" aria-live="polite"></p>
         </div>
 
         <!-- TODO 2: Request Type select -->
         <div class="field">
-          <label for="select">Requester Name</label>
-          <select name="select" id="select">
-            <option value="" disabled selected>-- Please select a requester --</option>
+          <label for="select">Request Type</label>
+          <select name="select" id="select" aria-describedby="select-error" required>
+            <option value="" disabled selected>-- Please select a request type --</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
           </select>
+          <p id="select-error" class="error" aria-live="polite"></p>
         </div>
 
         <!-- TODO 3: Details textarea -->
         <div class="field">
-          <label for="textarea">Requester Name</label>
-          <textarea name="textarea" id="textarea"></textarea>
+          <label for="details">Details</label>
+          <textarea name="details" id="details" placeholder="Enter request details" aria-describedby="details-error"
+            required></textarea>
+          <div class="field-meta">
+            <small id="details-hint" class="hint">อย่างน้อย 10 ตัวอักษร</small>
+            <small id="details-count" class="counter" aria-live="polite">0 ตัวอักษร</small>
+          </div>
+          <p id="details-error" class="error" aria-live="polite"></p>
         </div>
+
         <button type="submit">Submit Request</button>
+        <button type="reset" class="button-secondary">เริ่มใหม่</button>
         <p id="form-status" class="status" role="status"></p>
       </form>
     </section>
@@ -68,7 +80,7 @@
         </div>
       </dl>
       <h3>Submitted Requests</h3>
-      <ul id="request-list" class="request-list"></ul>
+      <ol id="request-list" class="request-list"></ol>
     </aside>
   </main>
 </body>
